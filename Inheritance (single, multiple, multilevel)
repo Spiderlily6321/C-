@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    void eat() {
+        cout << "Animal is eating." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog is barking." << endl;
+    }
+};
+
+class Shape {
+public:
+    void draw() {
+        cout << "Shape is being drawn." << endl;
+    }
+};
+
+class Color {
+public:
+    void fill() {
+        cout << "Color is being filled." << endl;
+    }
+};
+
+class Rectangle : public Shape, public Color {
+public:
+    void display() {
+        cout << "Rectangle is being displayed." << endl;
+    }
+};
+
+class Vehicle {
+public:
+    void drive() {
+        cout << "Vehicle is being driven." << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void honk() {
+        cout << "Car is honking." << endl;
+    }
+};
+
+class Sedan : public Car {
+public:
+    void accelerate() {
+        cout << "Sedan is accelerating." << endl;
+    }
+};
+
+int main() {
+    Dog dog;
+    dog.eat();
+    dog.bark();
+
+    Rectangle rectangle;
+    rectangle.draw();
+    rectangle.fill();
+    rectangle.display();
+
+    Sedan sedan;
+    sedan.drive();
+    sedan.honk();
+    sedan.accelerate();
+
+    return 0;
+}
