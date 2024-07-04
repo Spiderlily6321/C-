@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+
+class Number {
+private:
+    int value;
+
+public:
+    Number(int value = 0) : value(value) {}
+
+    Number operator+(const Number& other) const {
+        return Number(this->value + other.value);
+    }
+
+
+    Number operator-(const Number& other) const {
+        return Number(this->value - other.value);
+    }
+
+
+    Number operator*(const Number& other) const {
+        return Number(this->value * other.value);
+    }
+
+
+    void display() const {
+        cout << value;
+    }
+};
+
+int main() {
+    Number num1(5);
+    Number num2(3);
+    Number result;
+
+
+    result = num1 + num2;
+    cout << "num1 + num2 = ";
+    result.display();
+    cout << endl;
+
+    result = num1 - num2;
+    cout << "num1 - num2 = ";
+    result.display();
+    cout << endl;
+
+    result = num1 * num2;
+    cout << "num1 * num2 = ";
+    result.display();
+    cout << endl;
+
+    return 0;
+}
