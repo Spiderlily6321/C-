@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int* dynamicInt = new int(42);
+
+    cout << "Dynamically allocated integer value: " << *dynamicInt << endl;
+
+    delete dynamicInt;
+
+    return 0;
+}
