@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+
+class Student {
+private:
+    std::string name;
+    int age;
+    double gpa;
+
+public:
+    Student(std::string name, int age, double gpa) {
+        this->name = name;
+        this->age = age;
+        this->gpa = gpa;
+    }
+
+    void displayInfo() {
+        std::cout << "Name: " << name << std::endl;
+        std::cout << "Age: " << age << std::endl;
+        std::cout << "GPA: " << gpa << std::endl;
+    }
+};
+
+int main() {
+    Student student1("Alice", 20, 3.8);
+    Student student2("Bob", 22, 3.5);
+
+    std::cout << "Student 1 Information:" << std::endl;
+    student1.displayInfo();
+
+    std::cout << "\nStudent 2 Information:" << std::endl;
+    student2.displayInfo();
+
+    return 0;
+}
