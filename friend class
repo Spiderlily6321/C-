@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class FriendClass;
+
+// Class: MyClass
+class MyClass {
+private:
+    int privateVar;
+
+public:
+    MyClass(int privateVar) : privateVar(privateVar) {}
+
+    friend class FriendClass;
+};
+
+class FriendClass {
+public:
+    void accessPrivateMember(MyClass& obj) {
+        cout << "Private member of MyClass accessed by FriendClass: " << obj.privateVar << endl;
+    }
+};
+
+int main() {
+    MyClass obj(42);
+    FriendClass friendObj;
+
+    friendObj.accessPrivateMember(obj);
+
+    return 0;
+}
